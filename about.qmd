@@ -1,9 +1,5 @@
 ---
-title: "About"
+title: "hahahahhahha im evil lollllllowoahfbu3iebfuwbeiw"
 ---
 
 About this site
-
-```{r}
-1 + 1
-```

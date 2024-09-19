@@ -1,0 +1,34 @@
+------------------------------------------------------------------------
+
+---
+title: "Rodent Species"
+description: |
+  Analysis of Rodent Species data from TidyTuesday
+author: "Paityn Richardson"
+date: "September 18, 2024"
+format: html
+---
+
+```{r}
+data <- tidytuesdayR::tt_load('2023-05-02')
+species <- data$species
+
+```
+
+```{r}
+library(dplyr)
+weight_data <- species %>%                
+  mutate(weight_difference = meanwgt - juvwgt, na.rm = FALSE)
+```
+
+```{r}
+library(ggplot2)
+ggplot(weight_data, aes(x = reorder(commonname, weight_difference), y = weight_difference, fill = weight_difference)) +
+  geom_bar(stat = "identity") +
+  coord_flip() + 
+  scale_fill_gradient(low = "pink", high = "orange") +
+  labs(title = "Weight Difference Across Rodent Species",
+       x = "Species Name",
+       y = "Weight Difference (g)") +
+  theme_minimal()
+```

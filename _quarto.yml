@@ -3,18 +3,21 @@ project:
   output-dir: docs
 
 website:
-  title: "paitynleigh.github.io"
+  title: "Paityn Richardson"
   navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+    left: 
+      - text: "About Me"
+        href: about.qmd
+      - text: "Data Viz"
+        menu: 
+          - text: "Rodent Species"
+            href: Rodentdata.qmd
+          - text: "Coffee Ratings"
+            href: CoffeeRatings.qmd
 
 format:
   html:
-    theme: cosmo
+    theme: Quartz
     css: styles.css
-    toc: true
 
 editor: visual
-

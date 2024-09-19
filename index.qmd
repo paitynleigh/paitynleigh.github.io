@@ -1,11 +1,20 @@
 ---
-title: "paitynleigh.github.io"
+title: "Paityn Richardson"
+subtitle: "Hi! My name is Paityn Richardson. I am a sophmore at Pomona College studying Politics and Data Science.I am from Frankfort, Il and I also play water polo for Pomona-Pitzer."
+
+about:
+  template: solana
+  image: Headshot.jpeg
+  image-width: 20em
+  image-shape: round
+  links: 
+    - text: Email
+      href: mailto:richardsonpai2338@gmail.com
+    - icon: instagram
+      text: Insta
+      href: https://www.instagram.com/paityn_richardson/
 ---
 
 This is a Quarto website.
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```

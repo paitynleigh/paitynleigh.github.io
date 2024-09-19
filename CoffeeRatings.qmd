@@ -1,0 +1,31 @@
+---
+title: "Coffee Ratings"
+description: |
+  Analysis of Coffee Ratings data from TidyTuesday
+author: Paityn Richardson
+date: September 18, 2024
+format: html
+---
+
+```{r}
+data <- tidytuesdayR::tt_load('2020-07-07')
+coffee_ratings <- data$coffee_ratings
+```
+
+```{r}
+coffee_ratings |>
+  select(total_cup_points, country_of_origin ) |>
+  group_by(country_of_origin)
+  
+```
+
+```{r}
+ggplot(coffee_ratings, aes(x = reorder(country_of_origin, total_cup_points), y = total_cup_points, fill = country_of_origin)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +  
+  labs(title = "Total Cup Points by Country of Origin",
+       x = "Country of Origin",
+       y = "Total Cup Points") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
