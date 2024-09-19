@@ -8,6 +8,7 @@ format: html
 ---
 
 ```{r}
+library(tidyverse)
 data <- tidytuesdayR::tt_load('2020-07-07')
 coffee_ratings <- data$coffee_ratings
 ```
