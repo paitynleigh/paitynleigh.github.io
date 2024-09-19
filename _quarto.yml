@@ -11,9 +11,9 @@ website:
       - text: "Data Viz"
         menu: 
           - text: "Rodent Species"
-            href: Rodentdata.qmd
+            href: Rodentdata.html
           - text: "Coffee Ratings"
-            href: CoffeeRatings.qmd
+            href: CoffeeRatings.html
 
 format:
   html:
