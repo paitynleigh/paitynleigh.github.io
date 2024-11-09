@@ -1,19 +1,9 @@
 ---
-title: "Poker Hand Probability"
-
+title: "Poker Hands Probability"
 author: "Paityn Richardson"
-
+date: "November 8th 2024"
 format: html
-
-editor: visual
-
-execute: 
-
-  warning: false
-
-  message: false
 ---
-
 
 In this project I plan to simulate the probability of being dealt a specific hand while playing poker. First I will simulate a deck of cards and then simulate the drawing of a 5 card hand with a function. Then I will use another function to check if the hand drawn at random matches a specific, special hand such as a full house, royal flush, etc.
 
