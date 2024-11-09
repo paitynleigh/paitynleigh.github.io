@@ -10,11 +10,9 @@ In this project I plan to simulate the probability of being dealt a specific han
 First, lets simulate a deck of cards
 
 ```{r}
-library(tidyverse)
-
-library(ggplot2)
-
-library(purrr)
+suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(ggplot2))
+suppressPackageStartupMessages(library(purrr))
 
 #use crossing function to associate each of the values with one of each of the suits 
 
