@@ -6,20 +6,21 @@ website:
   title: "Paityn Richardson"
   navbar:
     left: 
-      - text: "About Me"
-        href: about.qmd
       - text: "Data Viz"
         menu: 
           - text: "Rodent Species"
-            href: Rodentdata.html
+            href: Rodentdata.qmd
           - text: "Coffee Ratings"
-            href: CoffeeRatings.html
-          - text: "DS Project 3: Poker Hand Probabilty"
-            href: Project3.html
+            href: CoffeeRatings.qmd
+          - text: "Poker Hand Probabilty"
+            href: Project3.qmd
+          - text: "WAI Database Study"
+            href: WAIDatabaseStudy.qmd
+          
 
 format:
   html:
-    theme: Quartz
+    theme: sketchy
     css: styles.css
 
 editor: visual

@@ -4,7 +4,6 @@ description: |
   Analysis of Rodent Species data from TidyTuesday
 author: "Paityn Richardson"
 date: "September 18, 2024"
-format: html
 ---
 
 ```{r}
