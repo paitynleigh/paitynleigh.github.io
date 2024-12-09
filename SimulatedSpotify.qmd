@@ -1,0 +1,151 @@
+---
+title: "Simulated Spotify Wrapped"
+author: Paityn Richardson
+subtitle: December 9, 2024
+format:
+  revealjs:
+    scrollable: true
+    slide-number: true
+    show-slide-number: all
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+# Step 1
+
+## Generate Listening History
+
+-   want to simulate a YEAR worth of listening history
+
+-   60,000 / 3.5 = 17,100
+
+```{r}
+my_spotify_library <- read.csv("~/paitynleigh.github.io/MyspotifyLibrary.csv")
+
+colnames(my_spotify_library)
+```
+
+::: aside
+Tool "Tune My Music" Used to collect playlist data https://www.tunemymusic.com/transfer
+:::
+
+------------------------------------------------------------------------
+
+```{r}
+library(tidyverse)
+library(gt)
+
+simulated_year <- function(my_spotify_library, n = 17100) {
+  my_spotify_library|>
+    slice_sample(n = n, replace = TRUE)
+}
+
+```
+
+# Step 2
+
+## Data Conclusions
+-   Recreating Spotify Wrapped
+
+-   Top 5 Songs, Artists, and Albums
+
+```{r}
+top_5 <- function(data, colname){
+  data |>
+    count({{colname}}, sort = TRUE)|>
+    head(5)
+}
+
+```
+- Can use this same function for songs, artists, and albums
+
+## Now, Lets see 1 iteration of Simulated Listening History
+
+```{r}
+find_top_5 <- function(simulated_year) {
+  top_songs <- top_5(simulated_year, Track.name)
+  top_artists <- top_5(simulated_year, Artist.name)
+  top_albums <- top_5(simulated_year, Album)
+  
+  # labels each table 
+  list(songs = top_songs, artists = top_artists, albums = top_albums)
+}
+find_top_5(simulated_year(my_spotify_library))
+
+```
+
+# Step 3
+
+## Mapping
+- Lets create multiple simulated years of listening
+
+```{r}
+iters <- 1000
+
+results <- map(1:iters, ~ {
+  simulated_year <- simulated_year(my_spotify_library) 
+  find_top_5(simulated_year) 
+})
+
+```
+
+- What questions can mapping help us answer?
+
+## Probability
+- How likely is it that a specific artist will be in my top 5? Top 1??
+
+```{r}
+
+check_artist <- function(top_artists, artist) {
+  in_top_5 <- top_artists|>
+    filter(Artist.name == artist) |>
+    # Will return Boolean for this statement
+    nrow() > 0  
+  
+  is_top_artist <- top_artists |>
+    pull(Artist.name) |>
+    head(1) == artist 
+  
+  list(
+    in_top_5 = in_top_5,
+    is_top_artist = is_top_artist
+  )
+}
+
+```
+
+## cont.
+```{r}
+artist <- "TV Girl"
+
+artist_occurrences <- map(results, function(results) {
+
+  check_artist(pluck(results, "artists"), artist)
+})
+
+data <- map_dfr(artist_occurrences, ~ tibble(
+  in_top_5 = pluck(.x, "in_top_5"),
+  is_top_artist = pluck(.x, "is_top_artist")
+))
+
+data|>
+  head(1)
+```
+## Conclusions
+```{r}
+prob_top_5 <- data |>
+  select(in_top_5) |>
+  summarise(mean = mean(in_top_5))|>
+  pull(mean)
+
+prob_top_1 <- data |>
+  select(is_top_artist) |>
+  summarise(mean = mean(is_top_artist))|>
+  pull(mean)
+
+prob_top_5
+prob_top_1
+```
