@@ -1,8 +1,11 @@
 ---
 title: "Poker Hands Probability"
 author: "Paityn Richardson"
-date: "November 8th 2024"
+date: November 8 2024
 format: html
+execute: 
+  warning: false
+  message: false
 ---
 
 In this project I plan to simulate the probability of being dealt a specific hand while playing poker. First I will simulate a deck of cards and then simulate the drawing of a 5 card hand with a function. Then I will use another function to check if the hand drawn at random matches a specific, special hand such as a full house, royal flush, etc.
@@ -10,9 +13,9 @@ In this project I plan to simulate the probability of being dealt a specific han
 First, lets simulate a deck of cards
 
 ```{r}
-suppressPackageStartupMessages(library(tidyverse))
-suppressPackageStartupMessages(library(ggplot2))
-suppressPackageStartupMessages(library(purrr))
+library(tidyverse)
+library(ggplot2)
+library(purrr)
 
 #use crossing function to associate each of the values with one of each of the suits 
 
@@ -34,6 +37,8 @@ deal_hand <- function(deck){
   return(hand)
 
 }
+
+deal_hand(deck)
 ```
 
 Now, lets write a few functions that will check for special hands.
@@ -46,7 +51,7 @@ check_straight <- function(hand){
 "A")
 
   ordered_hand_values <- match(hand$value, value_order)
-
+  
   is_straight <- all(diff(sort(ordered_hand_values)) == 1)
 
   return(is_straight)
@@ -75,9 +80,9 @@ check_full_house <- function(hand){
 
   #Gives True if there exactly 2 unique values and there are 3 repeats of the first value and 2 repeats of the second
 
-  suppressWarnings(if_else(length(value_frequency) == 2 &
+    if_else(length(value_frequency) == 2 &
 
-            all(value_frequency == c(3,2)), TRUE, FALSE))
+            all(value_frequency == c(3,2)), TRUE, FALSE)
 
 }
 

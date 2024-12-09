@@ -3,7 +3,11 @@ title: "WAI Database Study"
 description: |
   Analysis of Sound Absorbance Data from WAI Database
 author: Paityn Richardson
-date: November 26, 2018
+date: November 26, 2024
+format: html
+execute: 
+  warning: false
+  message: false
 ---
 
 ```{r}
@@ -21,7 +25,30 @@ Subjects <- tbl(con_wai, "Subjects")
 # collect(Measurements)
 ```
 
-In this project I plan to use the data from the [Wideband Acoustic Immittance (WAI) Database](https://www.science.smith.edu/wai-database/) hosted by Smith College. With this data I plan to replicate the figure from Voss (2020) titled "Mean Absorbance from Each Publication in the WAI Database". I started of by arranging the data using a SQL query.
+In this project I plan to use the data from the [Wideband Acoustic Immittance (WAI) Database](https://www.science.smith.edu/wai-database/) hosted by Smith College. I plan to replicate a figure published in the Official Journal of the American Auditory Society by Susan Voss titled "Mean Absorbance from each Publication in the WAI Database" [Voss(2020)](https://journals.lww.com/ear-hearing/citation/2019/11000/resource_review.21.aspx). The database contains 3 data sets: Measurements, PI_Info, and Subjects, which all have different information pertaining to the study.
+
+Here is the measurements table,
+
+```{sql}
+#| connection: con_wai
+DESCRIBE Measurements
+```
+
+Here is the PI_Info table,
+
+```{sql}
+#| connection: con_wai
+DESCRIBE PI_Info
+```
+
+And here is the Subjects table,
+
+```{sql}
+#| connection: con_wai
+DESCRIBE Subjects
+```
+
+I started of by arranging the data using a SQL query.
 
 ```{sql}
 #| connection: con_wai
@@ -38,13 +65,12 @@ In this project I plan to use the data from the [Wideband Acoustic Immittance (W
         PI_Info pi
         ON m.Identifier = pi.Identifier
     WHERE 
-        m.Identifier IN ('Abur_2014', 'Feeney_2017', 'Groon_2015', 'Lewis_2015', 'Lui_2008', 'Rosowski_2012', 'Shahnaz_2006', 'Shaver_2013', 'Sun_2016', 'Voss_1994', 'Voss_2010', 'Werner_2010')
+        m.Identifier IN ('Abur_2014', 'Feeney_2017', 'Groon_2015', 'Lewis_2015', 'Lui_2008', 'Rosowski_2012', 'Shahnaz_2006', 'Shaver_2013', 'Sun_2016', 'Voss_1994', 'Voss_2010', 'Werner_2010') 
+        AND m.Frequency BETWEEN 200 AND 8000
     GROUP BY 
         m.Frequency, 
         m.Identifier, 
-        m.Instrument, 
-        pi.Year, 
-        pi.AuthorsShortList
+        m.Instrument
     ORDER BY 
         m.Frequency, 
         m.Identifier, 
@@ -53,7 +79,7 @@ In this project I plan to use the data from the [Wideband Acoustic Immittance (W
 
 ```
 
-In this query, I grouped the data by Frequency, Identifier, Instrument, Year, and AuthorShortList. In order to get the variable "AuthorShortList" I joined the PI_Info table and the Measuements table on SubjectNumber. I used Concat to make a label for each of the studies with the number of unique ears, the instrument used, and the year and author of the study.
+In this query, I grouped the data by Frequency, Identifier, and Instrument. In order to get the variable "AuthorShortList" I joined the PI_Info table and the Measurements table on SubjectNumber. I used Concat to make a label for each of the studies with the number of unique ears, the instrument used, and the year and author of the study. My goal was to match the figure created by Voss in 2022, so I filtered for only studies included in that specific plot.
 
 ```{r}
 library(ggplot2)
@@ -61,11 +87,9 @@ library(ggplot2)
 
 ggplot(new_table, aes(x = Frequency, y = Mean_Absorption, color = Label)) +
   geom_line(size = .7, na.rm = TRUE) +  
-  scale_x_continuous(
-    name = "Frequency (Hz)",
-    breaks = c(0, 2000, 3000, 3500, 3850, 6000, 7000, 7500, 8000),
-    labels = c("200", "400", "600", "800", "1000", "2000", "4000", "6000", "8000")
-  ) +
+  scale_x_log10(name = "Frequency (Hz)",
+    breaks = c(200, 400, 600, 800, 1000, 2000, 4000, 6000, 8000),
+    labels = c("200", "400", "600", "800", "1000", "2000", "4000", "6000", "8000")) +
   scale_y_continuous(
     name = "Mean Absorbance",
     limits = c(0, 1), 
@@ -86,8 +110,7 @@ ggplot(new_table, aes(x = Frequency, y = Mean_Absorption, color = Label)) +
     legend.spacing = unit(0.01, "cm"),
     legend.background = element_rect(color = "black", size = .2, fill = "white"),
     aspect.ratio = 1
-  ) +
-  coord_cartesian(xlim = c(200, 8000))
+  ) 
 
 
 
@@ -111,6 +134,7 @@ ON
 WHERE 
     m.Identifier = 'Aithal_2015'
     AND s.Sex != 'Unknown'
+    AND m.Frequency BETWEEN 200 AND 8000
 GROUP BY 
     m.Frequency, s.Sex
 ORDER BY 
@@ -118,7 +142,7 @@ ORDER BY
 
 ```
 
-Now with this SQL query, I am doing a similar thing to the last, except now I am also grouping by "sex" which required be to join the table "Subjects" also in the WAI database. I also chose only 1 specific study to measure on this table, Aithal (2014).
+Now with this SQL query, I am doing a similar thing to the last, except now I am also grouping by "sex" which required me to join the table "Subjects" also in the WAI database. For this table i chose to focus on 1 study in the WAI data base, this being [A Comparison With High-Frequency Tympanometry, Automated Brainstem Response, and Transient Evoked and Distortion Product Otoacoustic Emissions](https://journals.lww.com/ear-hearing/abstract/2015/09000/wideband_absorbance_outcomes_in_newborns__a.18.aspx)(Aithal 2015).
 
 ```{r}
 dbDisconnect(con_wai, shutdown = TRUE)
@@ -129,18 +153,16 @@ library(ggplot2)
 
 ggplot(new_table4, aes(x = Frequency, y = Avg_Absorbance, color = Sex)) +
   geom_line(size = 0.7, na.rm = TRUE) +
-  scale_x_continuous(
-    name = "Frequency (Hz)",
+  scale_x_log10(name = "Frequency (Hz)",
     breaks = c(200, 400, 600, 800, 1000, 2000, 4000, 6000, 8000),
-    labels = c("200", "400", "600", "800", "1000", "2000", "4000", "6000", "8000")
-  ) +
+    labels = c("200", "400", "600", "800", "1000", "2000", "4000", "6000", "8000")) +
   scale_y_continuous(
     name = "Average Absorbance",
     limits = c(0, 1), 
     breaks = seq(0, 1, by = 0.1)
   ) +
   labs(
-    title = "Average Absorbance by Frequency and Gender",
+    title = "Average Absorbance by Frequency and Gender(Aithal 2015)",
     color = NULL 
   ) +
   theme_minimal() +

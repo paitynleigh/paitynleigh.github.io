@@ -4,28 +4,49 @@ description: |
   Analysis of Coffee Ratings data from TidyTuesday
 author: Paityn Richardson
 date: September 18, 2024
+execute: 
+  warning: false
+  message: false
 ---
+
+In this project I will be using data from Jo Hardin's collection of "Tidy Tuesday" data sets.
 
 ```{r}
 library(tidyverse)
 data <- tidytuesdayR::tt_load('2020-07-07')
-coffee_ratings <- data$coffee_ratings
+coffee_ratings <- data[["coffee_ratings"]]
 ```
+
+The data Im using comes from the [Coffee Quality Database](https://github.com/jldbc/coffee-quality-database) posted by Buzzfeed Data Scientist James LeDoux. These data were collected from the Coffee Quality Institute's review pages in January 2018.
 
 ```{r}
 coffee_ratings |>
-  select(total_cup_points, country_of_origin ) |>
-  group_by(country_of_origin)
-  
+  head(1)
 ```
 
+The variable I am using is 'total_cup_points' which is the Total rating/points of a specific coffee on a scale from 0-100.
+
 ```{r}
-ggplot(coffee_ratings, aes(x = reorder(country_of_origin, total_cup_points), y = total_cup_points, fill = country_of_origin)) +
-  geom_bar(stat = "identity") +
-  coord_flip() +  
-  labs(title = "Total Cup Points by Country of Origin",
-       x = "Country of Origin",
-       y = "Total Cup Points") +
-  theme_minimal() +
-  theme(legend.position = "none")
+new_coffee_ratings <- coffee_ratings |>
+  group_by(country_of_origin) |>
+  filter(!is.na(country_of_origin)) |>
+  summarise(avg_score = mean(total_cup_points, na.rm = TRUE)) |>
+  arrange(desc(avg_score))
+
 ```
+
+This chunk takes the average "total_cup_points" for each country in the data set, and arranges those values in descending order. Now we can plot our findings using ggplot.
+
+```{r}
+ggplot(new_coffee_ratings, aes(x = reorder(country_of_origin, avg_score), y = avg_score, fill = country_of_origin)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(title = 'Average "Cup Points" Score by Country of Origin',
+       x = "Country of Origin",
+       y = "Average Score") +
+  theme_minimal() +
+  theme(legend.position = "none",
+        axis.text = element_text(size = 7))
+```
+
+As we can see from the plot, Papa New Guinea has the highest Average Score in total cup points. We can also conclude that most total cup point scores are between 75 and 90, as all of the bars are relatively close in length.

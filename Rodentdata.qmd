@@ -3,20 +3,39 @@ title: "Rodent Species"
 description: |
   Analysis of Rodent Species data from TidyTuesday
 author: "Paityn Richardson"
-date: "September 18, 2024"
+date: September 18, 2024
+execute: 
+  warning: false
+  message: false
 ---
+
+In this project I will be using data from Jo Hardin's collection of "Tidy Tuesday" data sets.
 
 ```{r}
 data <- tidytuesdayR::tt_load('2023-05-02')
-species <- data$species
+species <- data[["species"]]
+library(tidyverse)
 
 ```
+
+The data I am using comes from the [Portal Project](https://portal.weecology.org/).The Portal Project is a long-term ecological study being conducted near Portal, AZ. Since 1977, the site has been used to study the interactions among rodents, ants and plants and their respective responses to climate. This data pertains specifically to rodents.
 
 ```{r}
-library(dplyr)
-weight_data <- species %>%                
-  mutate(weight_difference = meanwgt - juvwgt, na.rm = FALSE)
+species |>
+  head(1)
 ```
+
+The variables I will be using are 'meanwgt' and 'juvwgt'. These are the average adult weight and the average juvenile weight of a given species, respectively.
+
+```{r}
+weight_data <- species |>
+  mutate(weight_difference = meanwgt - juvwgt) |>
+  filter(!is.na(weight_difference)) |>
+  select(commonname, weight_difference)
+
+```
+
+I wanted to find the average amount of growth a given rodent experiences in its lifetime so I subtracted the juvenile weight from the mean weight of the species. We then get a table with the species' common name and the "weight_difference" or the growth amount in the species life.
 
 ```{r}
 library(ggplot2)
@@ -24,8 +43,10 @@ ggplot(weight_data, aes(x = reorder(commonname, weight_difference), y = weight_d
   geom_bar(stat = "identity") +
   coord_flip() + 
   scale_fill_gradient(low = "pink", high = "orange") +
-  labs(title = "Weight Difference Across Rodent Species",
+  labs(title = "Average Lifetime Growth Across Rodent Species",
        x = "Species Name",
-       y = "Weight Difference (g)") +
+       y = "Growth Amount (g)") +
   theme_minimal()
 ```
+
+We can conclude from the visual that the White-throated Woodrat experiences the largest amount of growth in its life. The growth amount measurement does not account for the size of the species meaning a better measurement for comparison would be the growth amount relative to the species average size.
