@@ -1,10 +1,9 @@
 ---
 title: "Daily Research Blog 2025"
 author: Paityn Richardson
-subtitle: Summer Research 2025
+subtitle: Data Science Curriculum 
 ---
 
 ---
-Day: Monday, May 19th, 20205
-Time: 8:48 AM
+Date: May 19, 2025
 ---
