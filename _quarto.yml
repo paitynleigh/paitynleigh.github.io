@@ -6,6 +6,10 @@ website:
   title: "Paityn Richardson"
   navbar:
     left: 
+      - text: "Summer 2025"
+        menu:
+          - text: "Research Blog"
+            href: ResearchBlog.qmd
       - text: "Data Viz"
         menu: 
           - text: "Rodent Species"
