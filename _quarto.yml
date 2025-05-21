@@ -10,6 +10,8 @@ website:
         menu:
           - text: "Research Blog"
             href: ResearchBlog.qmd
+          - text: "R integration"
+            href: ExampleProblemIntegration.qmd
       - text: "Data Viz"
         menu: 
           - text: "Rodent Species"

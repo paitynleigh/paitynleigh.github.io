@@ -1,0 +1,46 @@
+---
+title: "Example Problem Integration"
+description: "Practice Problems from Pays Curriculum integrated into r use"
+author: Paityn Richardson
+---
+
+## 5.2: Using R for Scientific Calculations
+
+#### 1. Data Entry
+
+**blurb about entering data
+assigning variable names
+quotations around character/categorical
+leave certain blank or give information in a paragraph and have students fill in code
+
+```{r}
+library(tidyverse)
+
+animal <- c("Dog", "Cat", "Hamster", "Snail")
+distance <- c(20,10,3,.1)
+time <- c(2.5,.8,.6,10)
+
+data_frame <- data.frame(Animal = animal, Distance = distance, Time = time)
+
+data_frame
+```
+
+#### Doing Caluculations
+
+introduce basic tidyverse functions
+understanding the use of variables for calculation
+explain use of mutate
+naming new variable setting equal to its value
+pipe operator and assigning name to data frame
+
+```{r}
+
+new_data <- data_frame |>
+  mutate(speed = Distance / Time)
+
+new_data
+```
+
+#### Basic Graphing
+
+#### Curve Fitting
