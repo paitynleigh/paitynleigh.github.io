@@ -11,7 +11,7 @@ subtitle: Data Science Curriculum
 2.  Finish reading through the rest and take notes on the structure of problems. 
 3. I'm still a little confused about the physical logistics of computers in the classroom. It looks like the students mostly work in groups already, so maybe shared devices with a server connection would work, so every student doesn't need to download on their own device?
 
-##Date: May 20th 2025
+## Date: May 20th 2025
 
 1. Continued Reading through Pays curriculum. Created an infographic for teaching the difference between Quantitative and Categorical variables. Re-wrote a few problems what used excel in r. 
 2. Find more problems that cant be shifted from excel to r usage. 
