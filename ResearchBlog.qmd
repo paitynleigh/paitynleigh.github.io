@@ -15,4 +15,10 @@ subtitle: Data Science Curriculum
 
 1. Continued Reading through Pays curriculum. Created an infographic for teaching the difference between Quantitative and Categorical variables. Re-wrote a few problems what used excel in r. 
 2. Find more problems that cant be shifted from excel to r usage. 
-3. How is material typically taught during the program. Is it similar to a college lecture with slideshow presentation? I wanted to start thinking about teaching materials for information but i realized i not sure how material is usually taught. 
+3. How is material typically taught during the program. Is it similar to a college lecture with slideshow presentation? I wanted to start thinking about teaching materials for information but i realized i not sure how material is usually taught.
+
+## Date: May 21st 2025
+
+1. Re wrote section 5.2 in Latex and a Quarto document. Marked down and started writing example questions that involved excel usage. 
+2. Discuss whether I should try to continue in Latex or if it would be beneficial to switch to quarto. 
+3. Same as question 2 but I'm not sure how easy it is to view images in Latex, which makes it difficult to explain certain topics. Its much clearer in a quarto doc, but have to deal with problems of combining work with current curriculum. 

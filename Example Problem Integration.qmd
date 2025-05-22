@@ -1,9 +1,0 @@
----
-title: "Example Problem Integration"
-description: "Practice Problems from Pays Curriculum integrated into r use"
-author: Paityn Richardson
----
-
-## Function Relations and Modeling
-
-## Modeling Growth and Decay

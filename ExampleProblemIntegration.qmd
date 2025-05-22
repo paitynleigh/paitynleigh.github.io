@@ -4,14 +4,23 @@ description: "Practice Problems from Pays Curriculum integrated into r use"
 author: Paityn Richardson
 ---
 
-## 5.2: Using R for Scientific Calculations
+## 5.2: Using R for Data Calculations
 
-#### 1. Data Entry
+R is a programming language used for statistical analysis, data manipulation, and visualizations. When programming in R, users can work in R studio which provides an accessible platform to write and reproduce code. You will be working in R studio in what is called a Quarto Document to integrate both code and written work and best present your data.
 
-**blurb about entering data
-assigning variable names
-quotations around character/categorical
-leave certain blank or give information in a paragraph and have students fill in code
+### Understanding the Data
+
+When beginning to work with a data set, it it important to understand the structure and features that define it. Let's say you're working on a science project that is dealing with the speeds of different animals.
+
+You've measured how long your dog takes to run from the far corner of the back yard to the back door and measured that distance. Your neighbors have agreed to join join experiment and take the same measurements for their pet cat, hamster and snail. It would be same to assume that you want to compare the given speeds of each animal, meaning, in this case, animal type would be your {\\bf unit of observation}. The unit of observation is the variable in your data that is described by the other observations, the unit by which you will analyze your observations.
+
+### Writing in R
+
+Lets look at this example by creating a data frame in R. For small data sets such as this one, you can go ahead and enter the observations directly into R. First, begin by creating a new Quarto Document in R studio.
+
+![](images/Screen Shot 2025-05-21 at 9.26.47 PM.png){width="611"}
+
+You can begin the document with a \h
 
 ```{r}
 library(tidyverse)
@@ -25,13 +34,9 @@ data_frame <- data.frame(Animal = animal, Distance = distance, Time = time)
 data_frame
 ```
 
-#### Doing Caluculations
+#### Doing Calculations
 
-introduce basic tidyverse functions
-understanding the use of variables for calculation
-explain use of mutate
-naming new variable setting equal to its value
-pipe operator and assigning name to data frame
+introduce basic tidyverse functions understanding the use of variables for calculation explain use of mutate naming new variable setting equal to its value pipe operator and assigning name to data frame
 
 ```{r}
 
