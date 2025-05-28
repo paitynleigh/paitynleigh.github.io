@@ -2,7 +2,7 @@
 title: "Example Problem Integration"
 description: "Practice Problems from Pays Curriculum integrated into r use"
 author: Paityn Richardson
-
+format: pdf
 ---
 
 ## 5.2: Using R for Data Calculations
@@ -22,6 +22,9 @@ Lets look at this example by creating a data frame in R. For small data sets suc
 ![](images/Screen%20Shot%202025-05-21%20at%209.26.47%20PM.png){width="611"} To start entering data, we need to create a portion of our quarto document that will execute r code. Type "\`\`\`{r}", and a grey rectangle should appear on the line that looks something like this.
 
 ```{r}
+#| eval: false
+
+install.packages("tidyverse")
 ```
 
 Now, anything written in this block should be code in the r programming language. Lets start entering our Data. We have 3 variables in the data we are working with. Animals, our observational unit, Distance, and Time. These are our variable names. We will create objects by assigning the values of our observations to their respective variable with a backwards arrow as shown below.
@@ -37,6 +40,7 @@ animal <- c("Dog", "Cat", "Hamster", "Snail")
 Here, we have assigned the observations "Dog", "Cat", "Hamster", and "Snail" to the variable "animal" Now, do the same with the observations for Distance and time. Your work should now look something like this.
 
 ```{r}
+#| code-line-numbers: "4"
 library(tidyverse)
 
 animal <- c("Dog", "Cat", "Hamster", "Snail")
