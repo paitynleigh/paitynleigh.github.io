@@ -4,7 +4,6 @@ author: Paityn Richardson
 subtitle: Data Science Curriculum 
 ---
 
-
 ## Date: May 19, 2025
 
 1. Read through the beginning half of PAYS curriculum and took notes in a google doc. 
@@ -42,3 +41,8 @@ subtitle: Data Science Curriculum
 1. Wrote the R integrated version for the radioactive decay in class activity. Then i read and took notes on the data4all lessons to figure out how to formulate questions and lesson plans better. Finally i created an interactive qmd file with some sample homework questions. I broke the questions up into different categories that outline the basic skills expected to be gained from the curriculum. 
 2. I plan start compiling some of the documents I have into one file. Also, now that i have some experience writing interactive forms of questions, I am going to start updating some of the in class activities so there are versions of the files with less writing/explanation and instead just the questions and answers. 
 3. I What will the next steps be in th project? From my perspective, i want to be able to connect all the information needed to complete the in class activities to some sort of interactive homework assignment or lesson. I also think it would be beneficial to have some kinds of visual aids or lesson materials to help foster learning, but i don't know how cohesive that would be with the structure of the program. maybe the next step is just to condense materials and organize them neatly in github, but also there was maybe ideas of an interactive course site? I would be interested in that. 
+
+## Date: May 30th 2025
+1. I separated each of the In-Class activities into three different files: activity_intructions, activity_interactive, and activity_solutions. I also create a qmd file for each activity called ICA.activityname.qmd. This file has a short description of the activity and explains how to use the document or where(hypothetically) to find the version you need. I also created separate folders for each of these activities in my work. 
+2. Number 2 nd 3 kind of go hand in hand today but i need to meet with you to fix some stuff/ discuss where to put datasets to avoid having 2 copies of each one is the repo, because one needs to be in the folder with the activity so it can be read in, but I originally had them all in a folder called datasets, which would have been helpful for organizational purposes. 
+3. I am a little stuck with rendering right now because, for some reason eval: false condition is not working when i am trying to render. I thought maybe it was because my qmd's didnt have yaml headers but i looked into it and coulnt find anywhere that said that. I also tried adding a header and it did not help. It might be something with the include sytax that i need to update but for now its difficult because lal of my interactive documents hve a lot of un-renderable code... Im sure its probably a simple fix which is why i just focused on writing up all the documents first.  
