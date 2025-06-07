@@ -4,51 +4,51 @@ author: Paityn Richardson
 subtitle: Data Science Curriculum 
 ---
 
-## Date: May 19, 2025
+## Date: May 19
 
 1. Read through the beginning half of PAYS curriculum and took notes in a google doc. 
 2.  Finish reading through the rest and take notes on the structure of problems. 
 3. I'm still a little confused about the physical logistics of computers in the classroom. It looks like the students mostly work in groups already, so maybe shared devices with a server connection would work, so every student doesn't need to download on their own device?
 
-## Date: May 20th 2025
+## Date: May 20th
 
 1. Continued Reading through Pays curriculum. Created an infographic for teaching the difference between Quantitative and Categorical variables. Re-wrote a few problems what used excel in r. 
 2. Find more problems that cant be shifted from excel to r usage. 
 3. How is material typically taught during the program. Is it similar to a college lecture with slideshow presentation? I wanted to start thinking about teaching materials for information but i realized i not sure how material is usually taught.
 
-## Date: May 21st 2025
+## Date: May 21st 
 
 1. Re wrote section 5.2 in Latex and a Quarto document. Marked down and started writing example questions that involved excel usage. 
 2. Discuss whether I should try to continue in Latex or if it would be beneficial to switch to quarto. 
 3. Same as question 2 but I'm not sure how easy it is to view images in Latex, which makes it difficult to explain certain topics. Its much clearer in a quarto doc, but have to deal with problems of combining work with current curriculum. 
 
-## Date: May 23rd 2025
+## Date: May 23rd
 1. Gave presentation during pizza and progress. Added more to section 5.2 about tidyverse function and their use. Figured out Latex highlighting syntax. 
 2. I will start going through the other examples of excel use in the curriculum and rewrite them in r following the structure i have been using to write 5.2, 
 3. I'm not sure if i like how the highlighting looks when rendered in the pdf. I'm nervous that it looks to dissimilar to r and it will be hard for students to follow. I also don't love how the future lines are sill very visible so it doesn't really help to promote the step by step process we were trying to achieve.
 
-## Date: May 27th 2025
+## Date: May 27th
 1. Updated some styling choices in 5.2 re write. Took out latex code and just opted for displaying individual steps through lines of r code. Found 2 example problems in the Pays curriculum. Modeling Growth and Decay and Planetary Orbits. Re wrote both problems in r with solutions in all in a pdf. 
 2. Start re write for the Simple Pendulum Problem in pays curriculum which includes work in excel. Also I am going to have someone proof read my writing for grammar and spelling errors and make sure it is digestible for someone with minimal R background. 
 3. Is there an easier way to display an exponential model in r, because right now i am just fitting the curve by linearizing the model first. Also the displaying of the equation is a little difficult in R, but i figure that is also work that will be done on paper and its just helpful to have the solutions all in one place. Also am still a little bit confused (or maybe i forgot) what your goal or vision was for the different documents to come out of this project. Is there a separate one with just solutions or should solutions and questions all be together. And is there a separate doc with interactive prompts for each question, if so that will be next thing on my to-do list for 5.2. 
 
-## Date: May 28th 2025
+## Date: May 28th 
 1. I added a section to 5.2 about linear vs. non linear models. Since a lot of the in class activities involve examining either linear or non linear models, i thought it would be important to give the basic instructions here. I want to ask about labeling sections because it could be good to refer back to this specific sections when reading the in class activities. Created pdf for the simple pendulum problem with solutions and instructions. I also started reading some of the material in the data 4 all repo and found a good presentation about asking good questions. I think this could be a good topic for just starting out with data science materials. 
 2. Going to start forming the interactive versions of each of the in class activities. This will be a qmd file with minimal instructions that students can open up and type directly into. I also need to upload all the example data sets i have created somewhere so that students can access them and don't have to type data into excel.
 3. I want to add a section about asking good questions or how to formulate questions about data. I'm not sure if this would be better as something similar to 5.2 where its instructions based. Or have a string of homework problems that outline different data sets and just have students come up with questions and discuss with TA's and peers. I also think that most of the examples i am re writing come from the in-class activities section of the curriculum so i was wondering if it would it be worth it to just re write that whole section in r. That way there can just be a separate pdf with in class activities. 
 
-## Date: May 29th 2025
+## Date: May 29th
 1. Wrote the R integrated version for the radioactive decay in class activity. Then i read and took notes on the data4all lessons to figure out how to formulate questions and lesson plans better. Finally i created an interactive qmd file with some sample homework questions. I broke the questions up into different categories that outline the basic skills expected to be gained from the curriculum. 
 2. I plan start compiling some of the documents I have into one file. Also, now that i have some experience writing interactive forms of questions, I am going to start updating some of the in class activities so there are versions of the files with less writing/explanation and instead just the questions and answers. 
 3. I What will the next steps be in th project? From my perspective, i want to be able to connect all the information needed to complete the in class activities to some sort of interactive homework assignment or lesson. I also think it would be beneficial to have some kinds of visual aids or lesson materials to help foster learning, but i don't know how cohesive that would be with the structure of the program. maybe the next step is just to condense materials and organize them neatly in github, but also there was maybe ideas of an interactive course site? I would be interested in that. 
 
-## Date: May 30th 2025
+## Date: May 30th 
 1. I separated each of the In-Class activities into three different files: activity_intructions, activity_interactive, and activity_solutions. I also create a qmd file for each activity called ICA.activityname.qmd. This file has a short description of the activity and explains how to use the document or where(hypothetically) to find the version you need. I also created separate folders for each of these activities in my work. 
 2. Number 2 nd 3 kind of go hand in hand today but i need to meet with you to fix some stuff/ discuss where to put datasets to avoid having 2 copies of each one is the repo, because one needs to be in the folder with the activity so it can be read in, but I originally had them all in a folder called datasets, which would have been helpful for organizational purposes. 
 3. I am a little stuck with rendering right now because, for some reason eval: false condition is not working when i am trying to render. I thought maybe it was because my qmd's didnt have yaml headers but i looked into it and coulnt find anywhere that said that. I also tried adding a header and it did not help. It might be something with the include sytax that i need to update but for now its difficult because lal of my interactive documents hve a lot of un-renderable code... Im sure its probably a simple fix which is why i just focused on writing up all the documents first.  
  
 
-## Date: June 2nd 2025
+## Date: June 2nd 
 1. Finished the integrated documents for all of the in class activities. This included rendering each one to both pdf and html forms. I added an activity for Hooke's Law and Area of stars, which i previously did not have before. I also created a separate sections for homework problems/assignments in my work. I noticed that a lot of the in class problems, like the in class activities, have a way of being integrated to R. For the in class problem on modeling growth and decay, i combined documents the same way, minus the instructions, so the final pdf just contains the homework questions in an interactive format, and the solutions. 
 2. I am going complete writing the pre work questions for each of the in class assignments. I already have a few basic homework assignments that are designed to teach R but i think i want to split them up into individual questions so they can be referenced the same way the PAYS schedule references individual problems. 
 3. I am starting to think about data Saturdays and what examples might be good for getting students interested in the data. I think sports data could be really good for reaching a large audience of interests and im sure there is a lot of it out there. But i wonder if you think it would be good to stick to larger examples( like the data4all lessons) in order to create a more cohesive lesson. 
@@ -58,8 +58,18 @@ subtitle: Data Science Curriculum
 2. I found a few new sources that are high school data science programs and i want to make sure i get information from as many different places as possible so i can decide what actually will work for us and our goals. 
 3. Im not really confused about anything right now but i do want to pitch a lot of my ideas for the structure of data days. I know we talked about a fwe things so i tried to come up with some concrete structure things that would help with starting to write content for the program.
 
-## Date June 4th: 
+## Date: June 4th
 1. Started Looking into how to form the less on plan around city planning. I begin with a rough outline of the Week structure with topics for lessons and the skills that should be gained throughout the weeks. Now i've begun trying to piece the story together through datasets. Ive wrote the structure of the first lesson dealing with the history of the city plan in Los Angeles. I also started making the presentation for friday. I wanted to talk about the goals for the curriculum and why whose are our goals. Also the plans we have to achieve them through specific areas of the curriculum. 
 2. Going to continue searching for relevant data sets and trying to come up with creative activities to help continue telling hte story of city planning data. 
 
-3. I am wondering who would mostly be teaching and instructing these saturday workshops. Would it mostly be professors, or would studetns be leading a lot of the activities. I think it could be helpful to have a student mentor program but i dont know how much work people would be willing to do. 
+3. I am wondering who would mostly be teaching and instructing these saturday workshops. Would it mostly be professors, or would studetns be leading a lot of the activities. I think it could be helpful to have a student mentor program but i dont know how much work people would be willing to do.
+
+## Date: June 5th 
+1. Today i began writing a lesson plan based around the `ca_tes` data set from american forests tree canopy data. The lesson starts with an introduction on why i city planning to display data science. It then goes into the meaning behind the dataset and the real-world applications of solutions. It then goes into viewing the data set, learning what an observation and observational unit is. Next, i discuss the process of questioning a data set, and learning to create informed SMART questions. The presentation then discusses the process of data wrangling using examples from the `ca_tes` data set. And finally i have created a few example visualizations to discuss the importance of meaningfully expressing and communicating your findings. This may not be the end of the lesson and there definitely is more room to add content but so far i've created somewhat of a basic structure for the lesson. 
+2. I need to finish the presentation for pizza and progess, specifically pick a few examples from the lesson and explain how they connect to the goals of the project. 
+3. I am trying to figure out a way to implement the mathlink cubes lesson into the full lesson plan. 
+
+## Date: June 6th 
+1. Finished presentation for pizza and progress. Created California heat map by joining the census data with the tes data set. After finding and figuring out how to use the census data i created a few data wrangling examples in the lesson plan for Saturdays. I also changed the format of the saturday lesson plan. Instead of starting with examples usages for the data verbs, i created a portion where the students would do an activity involving the mathlink cubes. I explained how they work and how they represent a data set. Then i prompt students to think about the data verbs intuitively(what you think they might mean) before giving them the definition and prompting them to physically recreate the wrangling with the cubes.
+2. Begin creating a lesson with another example and new data. I could stick with the topic of city planning and do something else like traffic or transportation data, or i might shift completely.
+3. Depending on the structure of the Saturdays, i will make the lessons completely different. If the workshops are going to be close in date and we expect relatively the same students to show up=, then i will probably keep with the same example and add onto it to dive deeper into the data and teach more complex applications. But if each of the Saturdays are going to be completely separate, then i will probably just come up with a new example, reteaching the basic concepts i went over in the initial tree coverage lesson. 
