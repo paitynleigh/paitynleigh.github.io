@@ -355,5 +355,19 @@
     "title": "Daily Research Blog 2025",
     "section": "Date: June 24th 2025",
     "text": "Date: June 24th 2025\n\nI finished all the in class materials for week 1 and week 2. I did a little bit more work on the planetary orbits lab though i think we may go over it and change some of the material.\nFinish editing planetary orbits and move onto the next 2 weeks of in class problems.\nI have a few questions today. First, Should all of the homework questions for week 1 be integrated into one singular .qmd file that way students dont have to keep downloading materials and everything can be kept. little more put together. I also wondered, however, if the in class assignments even needed to be rendered to pdf because they already have the instructions printed and i dont think they will be turning in a pdf version of their in class work."
+  },
+  {
+    "objectID": "ResearchBlog.html#date-june-24th",
+    "href": "ResearchBlog.html#date-june-24th",
+    "title": "Daily Research Blog 2025",
+    "section": "Date: June 24th",
+    "text": "Date: June 24th\n\nI finished all the in class materials for week 1 and week 2. I did a little bit more work on the planetary orbits lab though i think we may go over it and change some of the material.\nFinish editing planetary orbits and move onto the next 2 weeks of in class problems.\nI have a few questions today. First, Should all of the homework questions for week 1 be integrated into one singular .qmd file that way students dont have to keep downloading materials and everything can be kept. little more put together. I also wondered, however, if the in class assignments even needed to be rendered to pdf because they already have the instructions printed and i dont think they will be turning in a pdf version of their in class work."
+  },
+  {
+    "objectID": "ResearchBlog.html#date-june-25th",
+    "href": "ResearchBlog.html#date-june-25th",
+    "title": "Daily Research Blog 2025",
+    "section": "Date: June 25th",
+    "text": "Date: June 25th\n\nToday I sat in with the Pays class and helped out with the Hooke’s Lab activity. There was definitely a lot of confusion, as we expected, but i think a lot of the students started to get a hang of things by the end of class. I also stopped my the TA session to make sure everyone had the lab assignment turned in correctly. I notices a lot of the students didnt go through the assignment in order? Some skipped to the r chunks and others tried to skip to the end to see what questions they had to answer. I saw this caused a lot of confusion with the work flow of the code chunks within the questions. I stated writing the extra lesson for next Wednesdays class with the olympic dataset and i made sure to emphasize the importance of following along with the lesson chronologically.\nFinish working on the olympics lesson. I also will sit in for the Pays class tomorrow to help them get started on the area of stars lab.\nAs of right now, i’m just writing wednesdays work how I would write any of the other in-class problems in a qmd file with instructions. But im wondering if it would be beneficial to have slides or some other presentation material for prof yassine. Today, there was little presentation in class an the students mostly just started work in groups right away and occasionally prof yassine would jump in to give tips so im not exactly sure if it works with his teaching style but i could definitely offer if he would like something like that."
   }
 ]
