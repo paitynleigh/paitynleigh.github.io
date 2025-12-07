@@ -1,6 +1,6 @@
 ---
-title: "Paityn Richardson"
-subtitle: "Hi! My name is Paityn Richardson. I am a rising Junior at Pomona College majoring in Computer Science and Politics. I am from Frankfort, Il and I also play water polo for Pomona-Pitzer."
+title: "About Me"
+subtitle: "Hi! My name is Paityn Richardson and I am a Junior @ Pomona College. I am majoring in Computer Science and Politics and also pursuing a minor in Data Science."
 
 about:
   template: solana
@@ -14,7 +14,3 @@ about:
       text: Insta
       href: https://www.instagram.com/paityn_richardson/
 ---
-
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
