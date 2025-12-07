@@ -11,6 +11,10 @@ website:
           - href: ResearchPoster.qmd
           - text: "Research Blog"
             href: ResearchBlog.qmd
+      - text: "Projects"
+        menu:
+          - text: "WNBA Ranking Analysis"
+            href: WNBA_RankAnalysis.qmd
       - text: "Data Viz"
         menu: 
           - text: "Rodent Species"
