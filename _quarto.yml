@@ -8,7 +8,6 @@ website:
     left: 
       - text: "Summer 2025"
         menu:
-          - text: "DS4HS"
           - href: ResearchPoster.qmd
           - text: "Research Blog"
             href: ResearchBlog.qmd

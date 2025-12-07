@@ -1,6 +1,6 @@
 ---
 title: "Data Science Research Project"
-date: "Summer 2025"
+date: July 10, 2025
 author: "Paityn Richardson"
 ---
 
