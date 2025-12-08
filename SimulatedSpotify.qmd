@@ -48,6 +48,7 @@ simulated_year <- function(my_spotify_library, n = 17100) {
 # Step 2
 
 ## Data Conclusions
+
 -   Recreating Spotify Wrapped
 
 -   Top 5 Songs, Artists, and Albums
@@ -60,7 +61,8 @@ top_5 <- function(data, colname){
 }
 
 ```
-- Can use this same function for songs, artists, and albums
+
+-   Can use this same function for songs, artists, and albums
 
 ## Now, Lets see 1 iteration of Simulated Listening History
 
@@ -80,7 +82,8 @@ find_top_5(simulated_year(my_spotify_library))
 # Step 3
 
 ## Mapping
-- Lets create multiple simulated years of listening
+
+-   Lets create multiple simulated years of listening
 
 ```{r}
 iters <- 1000
@@ -92,10 +95,11 @@ results <- map(1:iters, ~ {
 
 ```
 
-- What questions can mapping help us answer?
+-   What questions can mapping help us answer?
 
 ## Probability
-- How likely is it that a specific artist will be in my top 5? Top 1??
+
+-   How likely is it that a specific artist will be in my top 5? Top 1??
 
 ```{r}
 
@@ -118,6 +122,7 @@ check_artist <- function(top_artists, artist) {
 ```
 
 ## cont.
+
 ```{r}
 artist <- "TV Girl"
 
@@ -134,7 +139,9 @@ data <- map_dfr(artist_occurrences, ~ tibble(
 data|>
   head(1)
 ```
+
 ## Conclusions
+
 ```{r}
 prob_top_5 <- data |>
   select(in_top_5) |>

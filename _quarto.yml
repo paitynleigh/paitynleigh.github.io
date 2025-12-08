@@ -21,8 +21,6 @@ website:
             href: Rodentdata.qmd
           - text: "Coffee Ratings"
             href: CoffeeRatings.qmd
-          - text: "Spotify Patterns"
-            href: FinalProject2.qmd
           - text: "Poker Hand Probability"
             href: Project3.qmd
           - text: "WAI Database Study"
